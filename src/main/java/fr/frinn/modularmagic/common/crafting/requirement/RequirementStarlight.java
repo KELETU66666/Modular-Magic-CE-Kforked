@@ -34,7 +34,7 @@ public class RequirementStarlight extends ComponentRequirement.PerTick<Starlight
         MachineComponent cpn = component.getComponent();
         return (cpn.getContainerProvider() instanceof TileStarlightInput || cpn.getContainerProvider() instanceof TileStarlightOutput) &&
                 cpn.getComponentType() instanceof ComponentStarlight &&
-                cpn.getIOType() == getActionType();
+                cpn.ioType == getActionType();
     }
 
     @Override

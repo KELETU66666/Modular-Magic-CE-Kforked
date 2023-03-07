@@ -31,7 +31,7 @@ public class RequirementConstellation extends ComponentRequirement<Constellation
         MachineComponent cpn = component.getComponent();
         return cpn.getContainerProvider() instanceof TileConstellationProvider &&
                 cpn.getComponentType() instanceof ComponentConstellation &&
-                cpn.getIOType() == getActionType();
+                cpn.ioType == getActionType();
     }
 
     @Override

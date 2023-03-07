@@ -30,7 +30,7 @@ public class RequirementGrid extends ComponentRequirement.PerTick<Grid, Requirem
         MachineComponent cpn = component.getComponent();
         return cpn.getContainerProvider() instanceof TileGridProvider &&
                 cpn.getComponentType() instanceof ComponentGrid &&
-                cpn.getIOType() == getActionType();
+                cpn.ioType == getActionType();
     }
 
     @Override

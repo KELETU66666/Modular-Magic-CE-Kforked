@@ -35,7 +35,7 @@ public class RequirementAura extends ComponentRequirement<Aura, RequirementTypeA
         MachineComponent cpn = component.getComponent();
         return cpn.getContainerProvider() instanceof TileAuraProvider &&
                 cpn.getComponentType() instanceof ComponentAura &&
-                cpn.getIOType() == getActionType();
+                cpn.ioType == getActionType();
     }
 
     @Override

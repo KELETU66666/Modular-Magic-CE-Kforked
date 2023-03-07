@@ -40,7 +40,7 @@ public class RequirementLifeEssence extends ComponentRequirement.PerTick<LifeEss
         MachineComponent cpn = component.getComponent();
         return cpn.getContainerProvider() instanceof TileLifeEssenceProvider &&
                 cpn.getComponentType().equals(RegistriesMM.COMPONENT_TYPE_REGISTRY.getValue(ModularMagicComponents.KEY_COMPONENT_LIFE_ESSENCE)) &&
-                cpn.getIOType() == getActionType();
+                cpn.ioType == getActionType();
     }
 
     @Override

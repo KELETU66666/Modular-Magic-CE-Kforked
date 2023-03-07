@@ -39,7 +39,7 @@ public class RequirementAspect extends ComponentRequirement<AspectList, Requirem
         MachineComponent cpn = component.getComponent();
         return cpn.getContainerProvider() instanceof TileAspectProvider &&
                 cpn.getComponentType() instanceof ComponentAspect &&
-                cpn.getIOType() == getActionType();
+                cpn.ioType == getActionType();
     }
 
     @Override

@@ -40,7 +40,7 @@ public class RequirementWill extends ComponentRequirement<DemonWill, Requirement
         MachineComponent cpn = component.getComponent();
         return cpn.getContainerProvider() instanceof TileWillProvider &&
                 cpn.getComponentType() instanceof ComponentWill &&
-                cpn.getIOType() == getActionType();
+                cpn.ioType == getActionType();
     }
 
     @Override

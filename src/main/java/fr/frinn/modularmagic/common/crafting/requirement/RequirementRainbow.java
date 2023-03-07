@@ -28,7 +28,7 @@ public class RequirementRainbow extends ComponentRequirement<Rainbow, Requiremen
         MachineComponent cpn = component.getComponent();
         return cpn.getContainerProvider() instanceof TileRainbowProvider &&
                 cpn.getComponentType() instanceof ComponentRainbow &&
-                cpn.getIOType() == getActionType();
+                cpn.ioType == getActionType();
     }
 
     @Override
