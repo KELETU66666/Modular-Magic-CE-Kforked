@@ -1,6 +1,7 @@
 Changes from upstream:
 
 - Prevent machines from running when aspect outputs can't take the produced aspect (fixes voiding)
+- Allow aspect labels to render on top of aspect hatch blocks
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
 

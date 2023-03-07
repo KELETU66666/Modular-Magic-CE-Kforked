@@ -44,7 +44,7 @@ public class BlockAspectProviderOutput extends BlockMachineComponent implements 
 
     @Override
     public BlockRenderLayer getBlockLayer() {
-        return BlockRenderLayer.TRANSLUCENT;
+        return BlockRenderLayer.CUTOUT;
     }
 
     @Override
