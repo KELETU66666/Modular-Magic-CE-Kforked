@@ -1,10 +1,10 @@
 buildscript {
     repositories {
-        jcenter()
-        maven { url = "https://files.minecraftforge.net/maven" }
+        mavenCentral()
+        maven { url = "https://maven.minecraftforge.net/" }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+        classpath 'com.anatawa12.forge:ForgeGradle:2.3-1.0.7'
     }
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
@@ -36,10 +36,8 @@ minecraft {
 repositories {
     maven { url "https://maven.hellfiredev.net"}
     maven { url "http://dvs1.progwml6.com/files/maven"}
-    maven { url "http://tehnut.info/maven" }
-    maven { url "http://minecraft.curseforge.com/api/maven/"}
-    maven { url "https://maven.chaosfield.at"}
     maven { url "http://maven.blamejared.com" }
+    maven { url "https://cursemaven.com" }
 }
 
 dependencies {
@@ -63,15 +61,19 @@ dependencies {
     // for more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
+    
     deobfCompile "mezz.jei:jei_1.12.2:4.15.0.287"
     deobfCompile "hellfirepvp.modularmachinery:modularmachinery:1.12.2-1.11.1-v53"
     deobfCompile "hellfirepvp.astralsorcery:astralsorcery:1.12.2-1.10.23-v161"
-    deobfCompile "com.wayoftime.bloodmagic:BloodMagic:1.12.2-2.4.1-103"
-    deobfCompile "thaumcraft:Thaumcraft:1.12.2:6.1.BETA26"
-    deobfCompile "extra-utilities:extrautils2:1.12:1.9.9"
-    deobfCompile "de.ellpeck.naturesaura:NaturesAura:r14-209"
+    deobfCompile "curse.maven:bloodmagic-224791:2822288"
+    deobfCompile "curse.maven:thaumcraft-223628:2629023"
+    deobfCompile "curse.maven:extrautils2-225561:2678374"
+    deobfCompile "curse.maven:naturesaura-306626:2882138"
     deobfCompile 'CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.19.548'
 	deobfCompile "vazkii.botania:Botania:r1.10-355.4"
+    deobfCompile "curse.maven:baubles-227083:2518667"
+    deobfCompile "curse.maven:guideapi-228832:2645992"
+    deobfCompile "curse.maven:patchouli-306770:3162874"
 }
 
 processResources {
