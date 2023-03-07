@@ -16,6 +16,7 @@ import hellfirepvp.modularmachinery.common.machine.MachineComponent;
 import hellfirepvp.modularmachinery.common.util.ResultChance;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
+import thaumcraft.common.tiles.essentia.TileJarFillable;
 
 import javax.annotation.Nonnull;
 import java.util.List;
@@ -74,7 +75,7 @@ public class RequirementAspect extends ComponentRequirement<AspectList, Requirem
                     return CraftCheck.failure("error.modularmagic.requirement.aspect.less");
 
             case OUTPUT:
-                if(provider.doesContainerAccept(this.aspect))
+                if(provider.amount == 0 || provider.aspect == this.aspect && TileJarFillable.CAPACITY >= provider.amount + this.amount)
                     return CraftCheck.success();
                 else
                     return CraftCheck.failure("error.modularmagic.requirement.aspect.out");
