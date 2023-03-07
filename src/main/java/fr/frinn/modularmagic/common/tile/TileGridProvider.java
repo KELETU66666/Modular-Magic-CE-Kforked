@@ -1,6 +1,7 @@
 package fr.frinn.modularmagic.common.tile;
 
 import com.rwtema.extrautils2.backend.XUBlock;
+import com.rwtema.extrautils2.network.XUPacketBuffer;
 import com.rwtema.extrautils2.power.Freq;
 import com.rwtema.extrautils2.power.IWorldPowerMultiplier;
 import com.rwtema.extrautils2.power.PowerManager;
@@ -21,20 +22,21 @@ import net.minecraft.util.ITickable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-public class TileGridProvider extends TilePower implements IWorldPowerMultiplier, MachineComponentTile, ITickable {
+public abstract class TileGridProvider extends TilePower implements IWorldPowerMultiplier, MachineComponentTile, ITickable, ColorableMachineTile {
 
     private float power;
     private int tick;
     private int color = Config.machineColor;
 
-
+    @Override
     public int getMachineColor() {
         return this.color;
     }
 
-
+    @Override
     public void setMachineColor(int newColor) {
         this.color = newColor;
         IBlockState thisState = world.getBlockState(pos);
@@ -74,61 +76,39 @@ public class TileGridProvider extends TilePower implements IWorldPowerMultiplier
     }
 
     @Override
-    public void onLoad() {
-        if(!this.world.isRemote)
-            PowerManager.instance.addPowerHandler(this);
-    }
-
-    @Override
-    public void onChunkUnload() {
-        if(!world.isRemote)
-            PowerManager.instance.removePowerHandler(this);
-    }
-
-    @Override
     public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack, XUBlock xuBlock) {
-        if(!worldIn.isRemote && placer instanceof EntityPlayerMP) {
-            EntityPlayerMP player = (EntityPlayerMP) placer;
-            this.frequency = Freq.getBasePlayerFreq(player);
-            PowerManager.instance.addPowerHandler(this);
-        }
+        super.onBlockPlacedBy(worldIn, pos, state, placer, stack, xuBlock);
+        PowerManager.instance.addPowerHandler(this);
     }
 
     @Override
-    public void readFromNBT(NBTTagCompound compound) {
-        super.readFromNBT(compound);
+    public void readFromNBT(NBTTagCompound nbt) {
+        super.readFromNBT(nbt);
+        this.color = nbt.hasKey("casingColor") ? nbt.getInteger("casingColor") : Config.machineColor;
+    }
 
-        if(!compound.hasKey("casingColor")) {
-            color = Config.machineColor;
-        } else {
-            color = compound.getInteger("casingColor");
-        }
+    @Nonnull
+    @Override
+    public NBTTagCompound writeToNBT(NBTTagCompound nbt) {
+        super.writeToNBT(nbt);
+        nbt.setInteger("casingColor", this.color);
+        return nbt;
     }
 
     @Override
-    public NBTTagCompound writeToNBT(NBTTagCompound compound) {
-        compound = super.writeToNBT(compound);
-
-        compound.setInteger("casingColor", this.color);
-
-        return compound;
+    public void addToDescriptionPacket(XUPacketBuffer packet) {
+        super.addToDescriptionPacket(packet);
+        packet.writeInt(this.color);
     }
 
     @Override
-    public final SPacketUpdateTileEntity getUpdatePacket() {
-        NBTTagCompound compound = new NBTTagCompound();
-        super.writeToNBT(compound);
-        compound = writeToNBT(compound);
-        return new SPacketUpdateTileEntity(getPos(), 255, compound);
-    }
-
-    @Nullable
-    @Override
-    public MachineComponent provideComponent() {
-        return null;
+    public void handleDescriptionPacket(XUPacketBuffer packet) {
+        super.handleDescriptionPacket(packet);
+        this.color = packet.readInt();
     }
 
     public static class Input extends TileGridProvider{
+
         @Override
         public IWorldPowerMultiplier getMultiplier() {
             return this;
@@ -142,6 +122,7 @@ public class TileGridProvider extends TilePower implements IWorldPowerMultiplier
     }
 
     public static class Output extends TileGridProvider {
+
         @Override
         public IWorldPowerMultiplier getMultiplier() {
             return this;

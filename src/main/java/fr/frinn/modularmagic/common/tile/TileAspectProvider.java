@@ -4,10 +4,10 @@ import fr.frinn.modularmagic.common.tile.machinecomponent.MachineComponentAspect
 import hellfirepvp.modularmachinery.common.data.Config;
 import hellfirepvp.modularmachinery.common.machine.IOType;
 import hellfirepvp.modularmachinery.common.machine.MachineComponent;
+import hellfirepvp.modularmachinery.common.tiles.base.ColorableMachineTile;
 import hellfirepvp.modularmachinery.common.tiles.base.MachineComponentTile;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import thaumcraft.api.ThaumcraftApiHelper;
@@ -17,20 +17,21 @@ import thaumcraft.common.tiles.essentia.TileJarFillable;
 
 import javax.annotation.Nullable;
 
-public class TileAspectProvider extends TileJarFillable implements MachineComponentTile {
+public abstract class TileAspectProvider extends TileJarFillable implements MachineComponentTile, ColorableMachineTile {
 
-    private int maxAmount = 250;
     private int color = Config.machineColor;
 
+    @Override
     public int getMachineColor() {
         return this.color;
     }
 
+    @Override
     public void setMachineColor(int newColor) {
         this.color = newColor;
-        IBlockState thisState = world.getBlockState(pos);
-        world.notifyBlockUpdate(pos, thisState, thisState, 3);
-        markDirty();
+        IBlockState state = this.world.getBlockState(this.pos);
+        this.world.notifyBlockUpdate(this.pos, state, state, 3);
+        this.markDirty();
     }
 
     @Override
@@ -48,19 +49,19 @@ public class TileAspectProvider extends TileJarFillable implements MachineCompon
         return true;
     }
 
+    @Override
     public void update() {
-        if (!this.world.isRemote && this.amount < this.maxAmount) {
-            for(EnumFacing face : EnumFacing.VALUES) {
+        if (!this.world.isRemote && this.amount < TileJarFillable.CAPACITY) {
+            for (EnumFacing face : EnumFacing.VALUES) {
                 this.fillJar(face);
             }
         }
-
     }
 
-    void fillJar(EnumFacing face) {
+    private void fillJar(EnumFacing face) {
         TileEntity te = ThaumcraftApiHelper.getConnectableTile(this.world, this.pos, face);
         if (te != null) {
-            IEssentiaTransport ic = (IEssentiaTransport)te;
+            IEssentiaTransport ic = (IEssentiaTransport) te;
             if (!ic.canOutputTo(face.getOpposite())) {
                 return;
             }
@@ -80,7 +81,7 @@ public class TileAspectProvider extends TileJarFillable implements MachineCompon
 
     @Override
     public NBTTagCompound writeToNBT(NBTTagCompound nbt) {
-        nbt = super.writeToNBT(nbt);
+        super.writeToNBT(nbt);
         nbt.setInteger("casingColor", this.color);
         return nbt;
     }
@@ -88,33 +89,20 @@ public class TileAspectProvider extends TileJarFillable implements MachineCompon
     @Override
     public void readFromNBT(NBTTagCompound nbt) {
         super.readFromNBT(nbt);
-        if(!nbt.hasKey("casingColor")) {
-            color = Config.machineColor;
-        } else {
-            color = nbt.getInteger("casingColor");
-        }
+        this.color = nbt.hasKey("casingColor") ? nbt.getInteger("casingColor") : Config.machineColor;
     }
 
     @Override
-    public final SPacketUpdateTileEntity getUpdatePacket() {
-        NBTTagCompound compound = new NBTTagCompound();
-        super.writeToNBT(compound);
-        compound = writeToNBT(compound);
-        return new SPacketUpdateTileEntity(getPos(), 255, compound);
+    public NBTTagCompound writeSyncNBT(NBTTagCompound nbt) {
+        super.writeSyncNBT(nbt);
+        nbt.setInteger("casingColor", this.color);
+        return nbt;
     }
 
     @Override
-    public NBTTagCompound getUpdateTag() {
-        NBTTagCompound compound = new NBTTagCompound();
-        super.writeToNBT(compound);
-        compound = writeToNBT(compound);
-        return compound;
-    }
-
-    @Nullable
-    @Override
-    public MachineComponent provideComponent() {
-        return null;
+    public void readSyncNBT(NBTTagCompound nbt) {
+        super.readSyncNBT(nbt);
+        this.color = nbt.hasKey("casingColor") ? nbt.getInteger("casingColor") : Config.machineColor;
     }
 
     public static class Input extends TileAspectProvider {
