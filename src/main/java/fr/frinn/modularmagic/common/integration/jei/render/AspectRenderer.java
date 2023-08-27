@@ -1,6 +1,10 @@
 package fr.frinn.modularmagic.common.integration.jei.render;
 
 import fr.frinn.modularmagic.common.integration.JeiPlugin;
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
+import javax.annotation.Nullable;
 import mezz.jei.api.gui.IDrawableBuilder;
 import mezz.jei.api.ingredients.IIngredientRenderer;
 import net.minecraft.client.Minecraft;
@@ -10,11 +14,6 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.util.ResourceLocation;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
-
-import javax.annotation.Nullable;
-import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class AspectRenderer implements IIngredientRenderer<AspectList> {
 

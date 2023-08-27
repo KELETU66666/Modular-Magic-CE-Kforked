@@ -9,21 +9,21 @@ import hellfirepvp.modularmachinery.common.machine.MachineComponent;
 
 public class MachineComponentManaProvider extends MachineComponent<TileManaProvider> {
 
-	TileManaProvider manaProvider;
+    TileManaProvider manaProvider;
 
-	public MachineComponentManaProvider(IOType io, TileManaProvider manaProvider) {
-		super(io);
-		this.manaProvider = manaProvider;
-	}
+    public MachineComponentManaProvider(IOType io, TileManaProvider manaProvider) {
+        super(io);
+        this.manaProvider = manaProvider;
+    }
 
-	@Override
-	public ComponentType getComponentType() {
-		return RegistriesMM.COMPONENT_TYPE_REGISTRY.getValue(ModularMagicComponents.KEY_COMPONENT_MANA);
-	}
+    @Override
+    public ComponentType getComponentType() {
+        return RegistriesMM.COMPONENT_TYPE_REGISTRY.getValue(ModularMagicComponents.KEY_COMPONENT_MANA);
+    }
 
-	@Override
-	public TileManaProvider getContainerProvider() {
-		return manaProvider;
-	}
+    @Override
+    public TileManaProvider getContainerProvider() {
+        return manaProvider;
+    }
 
 }

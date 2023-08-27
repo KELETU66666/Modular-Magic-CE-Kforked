@@ -1,5 +1,1 @@
-{
-    "variants": {
-        "normal": { "model":"modularmagic:blockconstellationprovider" }
-    }
-}
+{"variants": {"normal": {"model": "modularmagic:blockconstellationprovider"}}}

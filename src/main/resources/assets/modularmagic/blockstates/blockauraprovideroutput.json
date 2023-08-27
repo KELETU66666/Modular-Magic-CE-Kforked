@@ -1,5 +1,1 @@
-{
-    "variants": {
-        "normal": { "model":"modularmagic:blockauraprovideroutput" }
-    }
-}
+{"variants": {"normal": {"model": "modularmagic:blockauraprovideroutput"}}}

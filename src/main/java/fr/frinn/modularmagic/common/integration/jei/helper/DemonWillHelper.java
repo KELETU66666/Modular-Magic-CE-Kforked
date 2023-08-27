@@ -4,14 +4,12 @@ import WayofTime.bloodmagic.soul.EnumDemonWillType;
 import com.google.common.collect.Iterables;
 import fr.frinn.modularmagic.ModularMagic;
 import fr.frinn.modularmagic.common.integration.jei.ingredient.DemonWill;
-import mezz.jei.api.ingredients.IIngredientHelper;
-
 import javax.annotation.Nullable;
+import mezz.jei.api.ingredients.IIngredientHelper;
 
 public class DemonWillHelper<T extends DemonWill> implements IIngredientHelper<T> {
 
-    @Nullable
-    @Override
+    @Nullable @Override
     public T getMatch(Iterable<T> ingredients, T ingredientToMatch) {
         if(Iterables.isEmpty(ingredients))
             return null;

@@ -1,5 +1,1 @@
-{
-    "variants": {
-        "normal": { "model":"modularmagic:blockstarlightproviderinput" }
-    }
-}
+{"variants": {"normal": {"model": "modularmagic:blockstarlightproviderinput"}}}

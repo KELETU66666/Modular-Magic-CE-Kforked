@@ -4,10 +4,9 @@ import fr.frinn.modularmagic.ModularMagic;
 import fr.frinn.modularmagic.common.item.ModularMagicItems;
 import hellfirepvp.modularmachinery.common.block.BlockDynamicColor;
 import hellfirepvp.modularmachinery.common.item.ItemBlockMachineComponent;
+import java.util.ArrayList;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
-
-import java.util.ArrayList;
 
 public class ModularMagicBlocks {
 
@@ -70,7 +69,7 @@ public class ModularMagicBlocks {
 
     protected static void registerBlock(String id, Block block, ItemBlock itemBlock) {
         block.setRegistryName(ModularMagic.MODID, id);
-        block.setUnlocalizedName(id);
+        block.setTranslationKey(id);
         BLOCKS.add(block);
         ModularMagicItems.registerItem(id, itemBlock);
     }

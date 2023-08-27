@@ -3,20 +3,14 @@ package fr.frinn.modularmagic.common.tile;
 import com.rwtema.extrautils2.power.PowerManager;
 import com.rwtema.extrautils2.tile.TileRainbowGenerator;
 import fr.frinn.modularmagic.common.tile.machinecomponent.MachineComponentRainbowProvider;
-import hellfirepvp.modularmachinery.common.data.Config;
 import hellfirepvp.modularmachinery.common.machine.IOType;
 import hellfirepvp.modularmachinery.common.machine.MachineComponent;
-import hellfirepvp.modularmachinery.common.tiles.base.ColorableMachineTile;
 import hellfirepvp.modularmachinery.common.tiles.base.MachineComponentTile;
 import hellfirepvp.modularmachinery.common.tiles.base.TileColorableMachineComponent;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.play.server.SPacketUpdateTileEntity;
-import net.minecraft.tileentity.TileEntity;
-
-import javax.annotation.Nullable;
 import java.util.Collection;
 import java.util.Iterator;
+import javax.annotation.Nullable;
+import net.minecraft.nbt.NBTTagCompound;
 
 public class TileRainbowProvider extends TileColorableMachineComponent implements MachineComponentTile {
 
@@ -44,8 +38,7 @@ public class TileRainbowProvider extends TileColorableMachineComponent implement
         return false;
     }
 
-    @Nullable
-    @Override
+    @Nullable @Override
     public MachineComponent provideComponent() {
         return new MachineComponentRainbowProvider(this, IOType.INPUT);
     }

@@ -1,5 +1,1 @@
-{
-    "variants": {
-        "normal": { "model":"modularmagic:blockmanaprovideroutput" }
-    }
-}
+{"variants": {"normal": {"model": "modularmagic:blockmanaprovideroutput"}}}

@@ -1,8 +1,9 @@
 package fr.frinn.modularmagic.common.block;
 
+import fr.frinn.modularmagic.ModularMagic;
 import fr.frinn.modularmagic.common.tile.TileGridProvider;
-import hellfirepvp.modularmachinery.common.CommonProxy;
 import hellfirepvp.modularmachinery.common.block.BlockMachineComponent;
+import javax.annotation.Nullable;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -14,8 +15,6 @@ import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-import javax.annotation.Nullable;
-
 public class BlockGridProviderInput extends BlockMachineComponent {
 
     public BlockGridProviderInput() {
@@ -24,7 +23,7 @@ public class BlockGridProviderInput extends BlockMachineComponent {
         setResistance(10F);
         setSoundType(SoundType.METAL);
         setHarvestLevel("pickaxe", 1);
-        setCreativeTab(CommonProxy.creativeTabModularMachinery);
+        setCreativeTab(ModularMagic.creativeTabModularMagic);
     }
 
     @Override
@@ -40,7 +39,7 @@ public class BlockGridProviderInput extends BlockMachineComponent {
     }
 
     @Override
-    public BlockRenderLayer getBlockLayer() {
+    public BlockRenderLayer getRenderLayer() {
         return BlockRenderLayer.CUTOUT;
     }
 
@@ -49,14 +48,12 @@ public class BlockGridProviderInput extends BlockMachineComponent {
         return true;
     }
 
-    @Nullable
-    @Override
+    @Nullable @Override
     public TileEntity createTileEntity(World world, IBlockState state) {
         return new TileGridProvider.Input();
     }
 
-    @Nullable
-    @Override
+    @Nullable @Override
     public TileEntity createNewTileEntity(World worldIn, int meta) {
         return null;
     }

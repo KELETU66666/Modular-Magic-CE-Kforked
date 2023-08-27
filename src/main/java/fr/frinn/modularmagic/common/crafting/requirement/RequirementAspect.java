@@ -14,12 +14,11 @@ import hellfirepvp.modularmachinery.common.lib.RegistriesMM;
 import hellfirepvp.modularmachinery.common.machine.IOType;
 import hellfirepvp.modularmachinery.common.machine.MachineComponent;
 import hellfirepvp.modularmachinery.common.util.ResultChance;
+import java.util.List;
+import javax.annotation.Nonnull;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.common.tiles.essentia.TileJarFillable;
-
-import javax.annotation.Nonnull;
-import java.util.List;
 
 public class RequirementAspect extends ComponentRequirement<AspectList, RequirementTypeAspect> {
 

@@ -2,14 +2,12 @@ package fr.frinn.modularmagic.common.integration.jei.helper;
 
 import fr.frinn.modularmagic.ModularMagic;
 import fr.frinn.modularmagic.common.integration.jei.ingredient.Mana;
-import mezz.jei.api.ingredients.IIngredientHelper;
-
 import javax.annotation.Nullable;
+import mezz.jei.api.ingredients.IIngredientHelper;
 
 public class ManaHelper<T extends Mana> implements IIngredientHelper<Mana> {
 
-    @Nullable
-    @Override
+    @Nullable @Override
     public Mana getMatch(Iterable<Mana> ingredients, Mana ingredientToMatch) {
         return ingredients.iterator().next();
     }

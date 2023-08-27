@@ -3,6 +3,9 @@ package fr.frinn.modularmagic.common.integration.jei.render;
 import WayofTime.bloodmagic.BloodMagic;
 import fr.frinn.modularmagic.common.integration.JeiPlugin;
 import fr.frinn.modularmagic.common.integration.jei.ingredient.LifeEssence;
+import java.util.ArrayList;
+import java.util.List;
+import javax.annotation.Nullable;
 import mezz.jei.api.gui.IDrawableBuilder;
 import mezz.jei.api.ingredients.IIngredientRenderer;
 import net.minecraft.client.Minecraft;
@@ -10,10 +13,6 @@ import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.util.ResourceLocation;
-
-import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.List;
 
 public class LifeEssenceRenderer implements IIngredientRenderer<LifeEssence> {
 

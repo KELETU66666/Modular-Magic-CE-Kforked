@@ -8,7 +8,6 @@ import hellfirepvp.modularmachinery.common.machine.IOType;
 import hellfirepvp.modularmachinery.common.machine.MachineComponent;
 import hellfirepvp.modularmachinery.common.tiles.base.MachineComponentTile;
 import hellfirepvp.modularmachinery.common.tiles.base.TileColorableMachineComponent;
-
 import javax.annotation.Nullable;
 
 public class TileAuraProvider extends TileColorableMachineComponent implements MachineComponentTile {
@@ -31,16 +30,14 @@ public class TileAuraProvider extends TileColorableMachineComponent implements M
         return new Aura(amount, type);
     }
 
-    @Nullable
-    @Override
+    @Nullable @Override
     public MachineComponent provideComponent() {
         return null;
     }
 
     public static class Input extends TileAuraProvider {
 
-        @Nullable
-        @Override
+        @Nullable @Override
         public MachineComponent provideComponent() {
             return new MachineComponentAuraProvider(this, IOType.INPUT);
         }
@@ -48,8 +45,7 @@ public class TileAuraProvider extends TileColorableMachineComponent implements M
 
     public static class Output extends TileAuraProvider {
 
-        @Nullable
-        @Override
+        @Nullable @Override
         public MachineComponent provideComponent() {
             return new MachineComponentAuraProvider(this, IOType.OUTPUT);
         }

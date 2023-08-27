@@ -2,9 +2,8 @@ package fr.frinn.modularmagic.common.crafting.component;
 
 import fr.frinn.modularmagic.ModularMagic;
 import hellfirepvp.modularmachinery.common.crafting.ComponentType;
-import net.minecraft.util.ResourceLocation;
-
 import java.util.ArrayList;
+import net.minecraft.util.ResourceLocation;
 
 public class ModularMagicComponents {
 
@@ -42,7 +41,7 @@ public class ModularMagicComponents {
         }
 
         if(ModularMagic.botaniaLoaded) {
-        	registerComponent(new ComponentMana(), KEY_COMPONENT_MANA);
+            registerComponent(new ComponentMana(), KEY_COMPONENT_MANA);
         }
     }
 

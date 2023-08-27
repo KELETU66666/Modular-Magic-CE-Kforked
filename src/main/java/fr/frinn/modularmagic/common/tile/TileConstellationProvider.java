@@ -7,8 +7,6 @@ import hellfirepvp.modularmachinery.common.machine.IOType;
 import hellfirepvp.modularmachinery.common.machine.MachineComponent;
 import hellfirepvp.modularmachinery.common.tiles.base.MachineComponentTile;
 import hellfirepvp.modularmachinery.common.tiles.base.TileColorableMachineComponent;
-import net.minecraft.tileentity.TileEntity;
-
 import javax.annotation.Nullable;
 
 public class TileConstellationProvider extends TileColorableMachineComponent implements MachineComponentTile {
@@ -20,8 +18,7 @@ public class TileConstellationProvider extends TileColorableMachineComponent imp
         return ConstellationSkyHandler.getInstance().getWorldHandler(world).isActive(constellation);
     }
 
-    @Nullable
-    @Override
+    @Nullable @Override
     public MachineComponent provideComponent() {
         return new MachineComponentConstellationProvider(this, IOType.INPUT);
     }

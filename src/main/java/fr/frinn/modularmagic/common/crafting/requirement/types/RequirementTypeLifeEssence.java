@@ -7,7 +7,6 @@ import fr.frinn.modularmagic.common.utils.RequirementUtils;
 import hellfirepvp.modularmachinery.common.crafting.helper.ComponentRequirement;
 import hellfirepvp.modularmachinery.common.crafting.requirement.type.RequirementType;
 import hellfirepvp.modularmachinery.common.machine.IOType;
-
 import javax.annotation.Nullable;
 
 public class RequirementTypeLifeEssence extends RequirementType<LifeEssence, RequirementLifeEssence> {
@@ -19,8 +18,7 @@ public class RequirementTypeLifeEssence extends RequirementType<LifeEssence, Req
         return new RequirementLifeEssence(type, amount, perTick);
     }
 
-    @Nullable
-    @Override
+    @Nullable @Override
     public String requiresModid() {
         return "bloodmagic";
     }

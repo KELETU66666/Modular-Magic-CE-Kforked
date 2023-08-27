@@ -1,5 +1,1 @@
-{
-    "variants": {
-        "normal": { "model":"modularmagic:blockgridproviderinput" }
-    }
-}
+{"variants": {"normal": {"model": "modularmagic:blockgridproviderinput"}}}

@@ -2,14 +2,12 @@ package fr.frinn.modularmagic.common.integration.jei.helper;
 
 import fr.frinn.modularmagic.ModularMagic;
 import fr.frinn.modularmagic.common.integration.jei.ingredient.Aura;
-import mezz.jei.api.ingredients.IIngredientHelper;
-
 import javax.annotation.Nullable;
+import mezz.jei.api.ingredients.IIngredientHelper;
 
 public class AuraHelper<T extends Aura> implements IIngredientHelper<T> {
 
-    @Nullable
-    @Override
+    @Nullable @Override
     public T getMatch(Iterable<T> ingredients, T ingredientToMatch) {
         for(T ingredient : ingredients) {
             if(ingredient.getType() == ingredientToMatch.getType())
@@ -20,7 +18,7 @@ public class AuraHelper<T extends Aura> implements IIngredientHelper<T> {
 
     @Override
     public String getDisplayName(T ingredient) {
-        return ingredient.getType().getName().getResourcePath() + "Aura";
+        return ingredient.getType().getName().getPath() + "Aura";
     }
 
     @Override
@@ -40,7 +38,7 @@ public class AuraHelper<T extends Aura> implements IIngredientHelper<T> {
 
     @Override
     public String getResourceId(T ingredient) {
-        return ingredient.getType().getName().getResourcePath();
+        return ingredient.getType().getName().getPath();
     }
 
     @Override

@@ -2,9 +2,8 @@ package fr.frinn.modularmagic.common.crafting.requirement.types;
 
 import fr.frinn.modularmagic.ModularMagic;
 import hellfirepvp.modularmachinery.common.crafting.requirement.type.RequirementType;
-import net.minecraft.util.ResourceLocation;
-
 import java.util.ArrayList;
+import net.minecraft.util.ResourceLocation;
 
 public class ModularMagicRequirements {
 

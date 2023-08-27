@@ -270,23 +270,18 @@ idea {
     project {
         settings {
             runConfigurations {
-                "1. Run Obfuscated Client"(Gradle) {
-                    taskNames = ["runObfClient"]
-                }
-                "2. Build mods"(Gradle) {
-                    taskNames = ["build"]
-                }
-                "3. Run Obfuscated Server"(Gradle) {
-                    taskNames = ["runObfServer"]
-                }
-                "4. Run Client"(Gradle) {
+                "1. Run Client"(Gradle) {
                     taskNames = ["runClient"]
                 }
-                "5. Run Server"(Gradle) {
+                "2. Run Server"(Gradle) {
                     taskNames = ["runServer"]
                 }
-
-
+                "3. Run Obfuscated Client"(Gradle) {
+                    taskNames = ["runObfClient"]
+                }
+                "4. Run Obfuscated Server"(Gradle) {
+                    taskNames = ["runObfServer"]
+                }
             }
             compiler.javac {
                 afterEvaluate {

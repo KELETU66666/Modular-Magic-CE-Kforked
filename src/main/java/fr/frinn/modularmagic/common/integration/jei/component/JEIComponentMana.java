@@ -1,18 +1,13 @@
 package fr.frinn.modularmagic.common.integration.jei.component;
 
-import java.awt.Point;
-import java.util.List;
-
 import com.google.common.collect.Lists;
-
 import fr.frinn.modularmagic.common.crafting.requirement.RequirementMana;
-import fr.frinn.modularmagic.common.crafting.requirement.RequirementWill;
-import fr.frinn.modularmagic.common.integration.jei.ingredient.DemonWill;
 import fr.frinn.modularmagic.common.integration.jei.ingredient.Mana;
 import fr.frinn.modularmagic.common.integration.jei.recipelayoutpart.LayoutMana;
-import fr.frinn.modularmagic.common.integration.jei.recipelayoutpart.LayoutWill;
 import hellfirepvp.modularmachinery.common.crafting.helper.ComponentRequirement;
 import hellfirepvp.modularmachinery.common.integration.recipe.RecipeLayoutPart;
+import java.awt.Point;
+import java.util.List;
 
 public class JEIComponentMana extends ComponentRequirement.JEIComponent<Mana> {
 
@@ -42,6 +37,6 @@ public class JEIComponentMana extends ComponentRequirement.JEIComponent<Mana> {
     public void onJEIHoverTooltip(int slotIndex, boolean input, Mana ingredient, List<String> tooltip) {
 
     }
-    
-    
+
+
 }

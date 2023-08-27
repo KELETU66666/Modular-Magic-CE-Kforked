@@ -1,14 +1,12 @@
 package fr.frinn.modularmagic.common.integration.jei.helper;
 
 import fr.frinn.modularmagic.common.integration.jei.ingredient.Constellation;
-import mezz.jei.api.ingredients.IIngredientHelper;
-
 import javax.annotation.Nullable;
+import mezz.jei.api.ingredients.IIngredientHelper;
 
 public class ConstellationHelper<T extends Constellation> implements IIngredientHelper<T> {
 
-    @Nullable
-    @Override
+    @Nullable @Override
     public T getMatch(Iterable<T> ingredients, T ingredientToMatch) {
         for(T constellation : ingredients) {
             if(constellation.getConstellation() == ingredientToMatch.getConstellation())

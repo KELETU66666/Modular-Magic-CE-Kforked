@@ -8,7 +8,6 @@ import hellfirepvp.astralsorcery.common.constellation.IConstellation;
 import hellfirepvp.modularmachinery.common.crafting.helper.ComponentRequirement;
 import hellfirepvp.modularmachinery.common.crafting.requirement.type.RequirementType;
 import hellfirepvp.modularmachinery.common.machine.IOType;
-
 import javax.annotation.Nullable;
 
 public class RequirementTypeConstellation extends RequirementType<Constellation, RequirementConstellation> {
@@ -19,8 +18,7 @@ public class RequirementTypeConstellation extends RequirementType<Constellation,
         return new RequirementConstellation(type, constellation);
     }
 
-    @Nullable
-    @Override
+    @Nullable @Override
     public String requiresModid() {
         return "astralsorcery";
     }

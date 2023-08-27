@@ -6,6 +6,7 @@ import hellfirepvp.modularmachinery.common.machine.IOType;
 import hellfirepvp.modularmachinery.common.machine.MachineComponent;
 import hellfirepvp.modularmachinery.common.tiles.base.ColorableMachineTile;
 import hellfirepvp.modularmachinery.common.tiles.base.MachineComponentTile;
+import javax.annotation.Nullable;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
@@ -14,8 +15,6 @@ import thaumcraft.api.ThaumcraftApiHelper;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.IEssentiaTransport;
 import thaumcraft.common.tiles.essentia.TileJarFillable;
-
-import javax.annotation.Nullable;
 
 public abstract class TileAspectProvider extends TileJarFillable implements MachineComponentTile, ColorableMachineTile {
 
@@ -107,8 +106,7 @@ public abstract class TileAspectProvider extends TileJarFillable implements Mach
 
     public static class Input extends TileAspectProvider {
 
-        @Nullable
-        @Override
+        @Nullable @Override
         public MachineComponent provideComponent() {
             return new MachineComponentAspectProvider(this, IOType.INPUT);
         }
@@ -116,8 +114,7 @@ public abstract class TileAspectProvider extends TileJarFillable implements Mach
 
     public static class Output extends TileAspectProvider {
 
-        @Nullable
-        @Override
+        @Nullable @Override
         public MachineComponent provideComponent() {
             return new MachineComponentAspectProvider(this, IOType.OUTPUT);
         }

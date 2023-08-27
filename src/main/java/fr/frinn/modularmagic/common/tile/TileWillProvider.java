@@ -7,7 +7,6 @@ import hellfirepvp.modularmachinery.common.machine.IOType;
 import hellfirepvp.modularmachinery.common.machine.MachineComponent;
 import hellfirepvp.modularmachinery.common.tiles.base.MachineComponentTile;
 import hellfirepvp.modularmachinery.common.tiles.base.TileColorableMachineComponent;
-
 import javax.annotation.Nullable;
 
 public class TileWillProvider extends TileColorableMachineComponent implements MachineComponentTile {
@@ -24,16 +23,14 @@ public class TileWillProvider extends TileColorableMachineComponent implements M
         WorldDemonWillHandler.drainWill(this.world, this.pos, willType, willValue, true);
     }
 
-    @Nullable
-    @Override
+    @Nullable @Override
     public MachineComponent provideComponent() {
         return null;
     }
 
     public static class Input extends TileWillProvider {
 
-        @Nullable
-        @Override
+        @Nullable @Override
         public MachineComponent provideComponent() {
             return new MachineComponentWillProvider(this, IOType.INPUT);
         }
@@ -41,8 +38,7 @@ public class TileWillProvider extends TileColorableMachineComponent implements M
 
     public static class Output extends TileWillProvider {
 
-        @Nullable
-        @Override
+        @Nullable @Override
         public MachineComponent provideComponent() {
             return new MachineComponentWillProvider(this, IOType.OUTPUT);
         }

@@ -1,5 +1,1 @@
-{
-    "variants": {
-        "normal": { "model":"modularmagic:blockrainbowprovider" }
-    }
-}
+{"variants": {"normal": {"model": "modularmagic:blockrainbowprovider"}}}

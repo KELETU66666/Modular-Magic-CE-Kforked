@@ -7,10 +7,9 @@ import de.ellpeck.naturesaura.api.NaturesAuraAPI;
 import de.ellpeck.naturesaura.api.aura.type.IAuraType;
 import hellfirepvp.astralsorcery.common.constellation.ConstellationRegistry;
 import hellfirepvp.astralsorcery.common.constellation.IConstellation;
+import javax.annotation.Nullable;
 import net.minecraft.util.ResourceLocation;
 import thaumcraft.api.aspects.Aspect;
-
-import javax.annotation.Nullable;
 
 public class RequirementUtils {
 
@@ -97,8 +96,7 @@ public class RequirementUtils {
         throw new JsonParseException("The component \'" + requirement + "\' expects a \'" + key + "\' string entry !");
     }
 
-    @Nullable
-    public static String getOptionalString(JsonObject json, String key) {
+    @Nullable public static String getOptionalString(JsonObject json, String key) {
         if(json.has(key) && json.get(key).isJsonPrimitive() && json.getAsJsonPrimitive(key).isString()) {
             String s = json.getAsJsonPrimitive(key).getAsString();
             return s;

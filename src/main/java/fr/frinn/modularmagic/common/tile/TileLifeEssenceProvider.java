@@ -12,15 +12,18 @@ import hellfirepvp.modularmachinery.common.machine.MachineComponent;
 import hellfirepvp.modularmachinery.common.tiles.base.MachineComponentTile;
 import hellfirepvp.modularmachinery.common.tiles.base.TileInventory;
 import hellfirepvp.modularmachinery.common.util.IOInventory;
-import net.minecraft.item.ItemStack;
-
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import net.minecraft.item.ItemStack;
 
 public class TileLifeEssenceProvider extends TileInventory implements MachineComponentTile {
 
     public  TileLifeEssenceProvider() {
         super(42);
+    }
+
+    @Override
+    public void doRestrictedTick() {
     }
 
     public SoulNetwork getSoulNetwork() {
@@ -59,16 +62,14 @@ public class TileLifeEssenceProvider extends TileInventory implements MachineCom
         };
     }
 
-    @Nullable
-    @Override
+    @Nullable @Override
     public MachineComponent provideComponent() {
         return null;
     }
 
     public static class Input extends TileLifeEssenceProvider {
 
-        @Nullable
-        @Override
+        @Nullable @Override
         public MachineComponent provideComponent() {
             return new MachineComponentLifeEssenceProvider(this, IOType.INPUT);
         }
@@ -76,8 +77,7 @@ public class TileLifeEssenceProvider extends TileInventory implements MachineCom
 
     public static class Output extends TileLifeEssenceProvider {
 
-        @Nullable
-        @Override
+        @Nullable @Override
         public MachineComponent provideComponent() {
             return new MachineComponentLifeEssenceProvider(this, IOType.OUTPUT);
         }

@@ -1,9 +1,11 @@
 package fr.frinn.modularmagic;
 
+import fr.frinn.modularmagic.common.CreativeTabModularMagic;
 import fr.frinn.modularmagic.common.event.RegistrationEvent;
 import fr.frinn.modularmagic.common.event.StarlightEventHandler;
 import fr.frinn.modularmagic.common.network.StarlightMessage;
 import fr.frinn.modularmagic.common.proxy.CommonProxy;
+import fr.frinn.modularmagic.modularmagic.Tags;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
@@ -16,18 +18,9 @@ import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.relauncher.Side;
 import thaumcraft.common.tiles.essentia.TileJarFillable;
 
-@Mod(modid = ModularMagic.MODID, name = ModularMagic.NAME, version = ModularMagic.VERSION, dependencies = ModularMagic.DEPENDENCIES)
+@Mod(modid = ModularMagic.MODID, name = Tags.MOD_NAME, version = Tags.VERSION)
 public class ModularMagic {
-    public static final String MODID = "modularmagic";
-    public static final String NAME = "Modular Magic";
-    public static final String VERSION = "1.6.1";
-    public static final String DEPENDENCIES =
-            "required-after:modularmachinery;" +
-            "after:bloodmagic;" +
-            "after:extrautils2;" +
-            "after:naturesaura;" +
-            "after:botania;" +
-            "after:thaumcraft";
+    public static final String MODID = Tags.MOD_ID;
 
     public static boolean bloodmagicLoaded = false;
     public static boolean thaumcraftLoaded = false;
@@ -35,7 +28,7 @@ public class ModularMagic {
     public static boolean extraUtils2Loaded = false;
     public static boolean astralLoaded = false;
     public static boolean naturesauraLoaded = false;
-	public static boolean botaniaLoaded = false;
+    public static boolean botaniaLoaded = false;
 
     @SidedProxy(modId = MODID, clientSide = "fr.frinn.modularmagic.common.proxy.ClientProxy", serverSide = "fr.frinn.modularmagic.common.proxy.ServerProxy")
     public static CommonProxy proxy;
@@ -43,6 +36,7 @@ public class ModularMagic {
     @Mod.Instance(MODID)
     public static ModularMagic INSTANCE;
 
+    public static CreativeTabModularMagic creativeTabModularMagic =new CreativeTabModularMagic();
     public static final SimpleNetworkWrapper NETWORK = NetworkRegistry.INSTANCE.newSimpleChannel(MODID);
 
     public ModularMagic() {

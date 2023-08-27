@@ -16,12 +16,11 @@ import hellfirepvp.modularmachinery.common.machine.IOType;
 import hellfirepvp.modularmachinery.common.machine.MachineComponent;
 import hellfirepvp.modularmachinery.common.tiles.base.ColorableMachineTile;
 import hellfirepvp.modularmachinery.common.tiles.base.MachineComponentTile;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 public class TileStarlightInput extends TileReceiverBase implements MachineComponentTile, ColorableMachineTile {
 
@@ -39,8 +38,7 @@ public class TileStarlightInput extends TileReceiverBase implements MachineCompo
         this.markForUpdate();
     }
 
-    @Nullable
-    @Override
+    @Nullable @Override
     public MachineComponent provideComponent() {
         return new MachineComponentStarlightProviderInput(this, IOType.INPUT);
     }
@@ -105,8 +103,7 @@ public class TileStarlightInput extends TileReceiverBase implements MachineCompo
         this.markDirty();
     }
 
-    @Nullable
-    @Override
+    @Nullable @Override
     public String getUnLocalizedDisplayName() {
         return "tile.blockstarlightproviderinput.name";
     }

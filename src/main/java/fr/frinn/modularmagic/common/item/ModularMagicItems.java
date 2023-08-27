@@ -2,9 +2,8 @@ package fr.frinn.modularmagic.common.item;
 
 import fr.frinn.modularmagic.ModularMagic;
 import hellfirepvp.modularmachinery.common.item.ItemDynamicColor;
-import net.minecraft.item.Item;
-
 import java.util.ArrayList;
+import net.minecraft.item.Item;
 
 public class ModularMagicItems {
 
@@ -17,7 +16,7 @@ public class ModularMagicItems {
 
     public static void registerItem(String id, Item item) {
         item.setRegistryName(ModularMagic.MODID, id);
-        item.setUnlocalizedName(id);
+        item.setTranslationKey(id);
         ITEMS.add(item);
     }
 }

@@ -43,3 +43,5 @@ tile.blockauraprovideroutput.name=Aura Output Hatch
 tile.blockrainbowprovider.name=Rainbow Input Hatch
 tile.blockmanaproviderinput.name=Mana Input Hatch
 tile.blockmanaprovideroutput.name=Mana Output Hatch
+
+itemGroup.ModularMagic=Modular Magic Community Edition

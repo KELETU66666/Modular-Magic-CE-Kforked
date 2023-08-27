@@ -1,5 +1,1 @@
-{
-    "variants": {
-        "normal": { "model":"modularmagic:blocklifeessenceproviderinput" }
-    }
-}
+{"variants": {"normal": {"model": "modularmagic:blocklifeessenceproviderinput"}}}

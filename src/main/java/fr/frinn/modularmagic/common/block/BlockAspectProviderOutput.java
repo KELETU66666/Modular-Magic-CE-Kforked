@@ -1,8 +1,9 @@
 package fr.frinn.modularmagic.common.block;
 
+import fr.frinn.modularmagic.ModularMagic;
 import fr.frinn.modularmagic.common.tile.TileAspectProvider;
-import hellfirepvp.modularmachinery.common.CommonProxy;
 import hellfirepvp.modularmachinery.common.block.BlockMachineComponent;
+import javax.annotation.Nullable;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -24,8 +25,6 @@ import thaumcraft.common.items.consumables.ItemPhial;
 import thaumcraft.common.lib.SoundsTC;
 import thaumcraft.common.tiles.essentia.TileJarFillable;
 
-import javax.annotation.Nullable;
-
 public class BlockAspectProviderOutput extends BlockMachineComponent implements ILabelable {
 
     public BlockAspectProviderOutput() {
@@ -34,7 +33,7 @@ public class BlockAspectProviderOutput extends BlockMachineComponent implements 
         setResistance(10F);
         setSoundType(SoundType.METAL);
         setHarvestLevel("pickaxe", 1);
-        setCreativeTab(CommonProxy.creativeTabModularMachinery);
+        setCreativeTab(ModularMagic.creativeTabModularMagic);
     }
 
     @Override
@@ -43,7 +42,7 @@ public class BlockAspectProviderOutput extends BlockMachineComponent implements 
     }
 
     @Override
-    public BlockRenderLayer getBlockLayer() {
+    public BlockRenderLayer getRenderLayer() {
         return BlockRenderLayer.CUTOUT;
     }
 
@@ -52,14 +51,12 @@ public class BlockAspectProviderOutput extends BlockMachineComponent implements 
         return true;
     }
 
-    @Nullable
-    @Override
+    @Nullable @Override
     public TileEntity createTileEntity(World world, IBlockState state) {
         return new TileAspectProvider.Output();
     }
 
-    @Nullable
-    @Override
+    @Nullable @Override
     public TileEntity createNewTileEntity(World worldIn, int meta) {
         return null;
     }
@@ -91,7 +88,7 @@ public class BlockAspectProviderOutput extends BlockMachineComponent implements 
                 this.onBlockPlacedBy(player.world, pos, player.world.getBlockState(pos), player, (ItemStack)null);
                 ((TileJarFillable)te).aspectFilter = ((TileJarFillable)te).aspect;
                 ((TileJarFillable)te).facing = enumFacing.getIndex();
-                player.world.markAndNotifyBlock(pos, player.world.getChunkFromBlockCoords(pos), player.world.getBlockState(pos), player.world.getBlockState(pos), 3);
+                player.world.markAndNotifyBlock(pos, player.world.getChunk(pos), player.world.getBlockState(pos), player.world.getBlockState(pos), 3);
                 te.markDirty();
                 player.world.playSound((EntityPlayer)null, (double)pos.getX() + 0.5D, (double)pos.getY() + 0.5D, (double)pos.getZ() + 0.5D, SoundsTC.jar, SoundCategory.BLOCKS, 0.4F, 1.0F);
                 return true;
@@ -118,7 +115,7 @@ public class BlockAspectProviderOutput extends BlockMachineComponent implements 
             if (world.isRemote) {
                 world.playSound((double)pos.getX() + 0.5D, (double)pos.getY() + 0.5D, (double)pos.getZ() + 0.5D, SoundsTC.page, SoundCategory.BLOCKS, 1.0F, 1.0F, false);
             } else {
-                world.spawnEntity(new EntityItem(world, (double)((float)pos.getX() + 0.5F + (float)side.getFrontOffsetX() / 3.0F), (double)((float)pos.getY() + 0.5F), (double)((float)pos.getZ() + 0.5F + (float)side.getFrontOffsetZ() / 3.0F), new ItemStack(ItemsTC.label)));
+                world.spawnEntity(new EntityItem(world, (double)((float)pos.getX() + 0.5F + (float)side.getXOffset() / 3.0F), (double)((float)pos.getY() + 0.5F), (double)((float)pos.getZ() + 0.5F + (float)side.getZOffset() / 3.0F), new ItemStack(ItemsTC.label)));
             }
             return true;
         } else if (te != null && te instanceof TileJarFillable && player.isSneaking() && player.getHeldItem(hand).isEmpty() && ((TileJarFillable)te).aspectFilter == null) {
@@ -165,7 +162,7 @@ public class BlockAspectProviderOutput extends BlockMachineComponent implements 
                     }
 
                     if (tile.addToContainer(aspect, 10) == 0) {
-                        world.markAndNotifyBlock(pos, world.getChunkFromBlockCoords(pos), this.getDefaultState(), this.getDefaultState(), 3);
+                        world.markAndNotifyBlock(pos, world.getChunk(pos), this.getDefaultState(), this.getDefaultState(), 3);
                         tile.markDirty();
                         player.getHeldItem(hand).shrink(1);
                         if (!player.inventory.addItemStackToInventory(new ItemStack(ItemsTC.phial, 1, 0))) {

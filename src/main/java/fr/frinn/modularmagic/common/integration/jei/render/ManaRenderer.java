@@ -1,17 +1,12 @@
 package fr.frinn.modularmagic.common.integration.jei.render;
 
-import java.awt.Color;
-import java.util.List;
-
-import javax.annotation.Nullable;
-
-import org.lwjgl.opengl.GL11;
-
 import com.google.common.collect.Lists;
-
 import fr.frinn.modularmagic.ModularMagic;
 import fr.frinn.modularmagic.common.integration.JeiPlugin;
 import fr.frinn.modularmagic.common.integration.jei.ingredient.Mana;
+import java.awt.Color;
+import java.util.List;
+import javax.annotation.Nullable;
 import mezz.jei.api.gui.IDrawableBuilder;
 import mezz.jei.api.ingredients.IIngredientRenderer;
 import net.minecraft.client.Minecraft;
@@ -20,6 +15,7 @@ import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
+import org.lwjgl.opengl.GL11;
 
 public class ManaRenderer implements IIngredientRenderer<Mana> {
 
@@ -28,7 +24,7 @@ public class ManaRenderer implements IIngredientRenderer<Mana> {
 
     @Override
     public void render(Minecraft minecraft, int xPosition, int yPosition, @Nullable Mana ingredient) {
-    	if(ingredient == null)return;
+        if(ingredient == null)return;
         GlStateManager.enableDepth();
         RenderHelper.enableGUIStandardItemLighting();
 

@@ -1,11 +1,9 @@
 package fr.frinn.modularmagic.common.integration.jei.recipelayoutpart;
 
-import java.awt.Point;
-
 import fr.frinn.modularmagic.common.integration.jei.ingredient.Mana;
-import fr.frinn.modularmagic.common.integration.jei.render.DemonWillRenderer;
 import fr.frinn.modularmagic.common.integration.jei.render.ManaRenderer;
 import hellfirepvp.modularmachinery.common.integration.recipe.RecipeLayoutPart;
+import java.awt.Point;
 import mezz.jei.api.ingredients.IIngredientRenderer;
 import net.minecraft.client.Minecraft;
 

@@ -2,7 +2,6 @@ package fr.frinn.modularmagic.common.tile;
 
 import com.rwtema.extrautils2.backend.XUBlock;
 import com.rwtema.extrautils2.network.XUPacketBuffer;
-import com.rwtema.extrautils2.power.Freq;
 import com.rwtema.extrautils2.power.IWorldPowerMultiplier;
 import com.rwtema.extrautils2.power.PowerManager;
 import com.rwtema.extrautils2.tile.TilePower;
@@ -12,18 +11,15 @@ import hellfirepvp.modularmachinery.common.machine.IOType;
 import hellfirepvp.modularmachinery.common.machine.MachineComponent;
 import hellfirepvp.modularmachinery.common.tiles.base.ColorableMachineTile;
 import hellfirepvp.modularmachinery.common.tiles.base.MachineComponentTile;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 public abstract class TileGridProvider extends TilePower implements IWorldPowerMultiplier, MachineComponentTile, ITickable, ColorableMachineTile {
 
@@ -114,8 +110,7 @@ public abstract class TileGridProvider extends TilePower implements IWorldPowerM
             return this;
         }
 
-        @Nullable
-        @Override
+        @Nullable @Override
         public MachineComponent provideComponent() {
             return new MachineComponentGridProvider(this, IOType.INPUT);
         }
@@ -128,8 +123,7 @@ public abstract class TileGridProvider extends TilePower implements IWorldPowerM
             return this;
         }
 
-        @Nullable
-        @Override
+        @Nullable @Override
         public MachineComponent provideComponent() {
             return new MachineComponentGridProvider(this, IOType.OUTPUT);
         }

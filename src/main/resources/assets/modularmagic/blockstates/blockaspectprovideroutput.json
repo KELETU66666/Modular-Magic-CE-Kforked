@@ -1,5 +1,1 @@
-{
-    "variants": {
-        "normal": { "model":"modularmagic:blockaspectprovideroutput" }
-    }
-}
+{"variants": {"normal": {"model": "modularmagic:blockaspectprovideroutput"}}}

@@ -1,11 +1,6 @@
 package fr.frinn.modularmagic.common.crafting.requirement;
 
-import java.util.List;
-
-import javax.annotation.Nonnull;
-
 import com.google.common.collect.Lists;
-
 import fr.frinn.modularmagic.common.crafting.requirement.types.ModularMagicRequirements;
 import fr.frinn.modularmagic.common.crafting.requirement.types.RequirementTypeMana;
 import fr.frinn.modularmagic.common.integration.jei.component.JEIComponentMana;
@@ -18,6 +13,8 @@ import hellfirepvp.modularmachinery.common.crafting.helper.RecipeCraftingContext
 import hellfirepvp.modularmachinery.common.lib.RegistriesMM;
 import hellfirepvp.modularmachinery.common.machine.IOType;
 import hellfirepvp.modularmachinery.common.util.ResultChance;
+import java.util.List;
+import javax.annotation.Nonnull;
 
 public class RequirementMana extends ComponentRequirement<Mana, RequirementTypeMana> {
 
@@ -36,7 +33,7 @@ public class RequirementMana extends ComponentRequirement<Mana, RequirementTypeM
     @Override
     public boolean startCrafting(ProcessingComponent component, RecipeCraftingContext context, ResultChance chance) {
         if(!canStartCrafting(component, context, Lists.newArrayList()).isSuccess())
-        	return false;
+            return false;
         TileManaProvider provider = (TileManaProvider) component.getComponent().getContainerProvider();
         provider.recieveMana(-manaAmount);
         return true;
@@ -44,9 +41,9 @@ public class RequirementMana extends ComponentRequirement<Mana, RequirementTypeM
 
     @Override
     public CraftCheck finishCrafting(ProcessingComponent component, RecipeCraftingContext context, ResultChance chance) {
-    	if(getActionType() == IOType.OUTPUT) {
+        if(getActionType() == IOType.OUTPUT) {
         TileManaProvider provider = (TileManaProvider) component.getComponent().getContainerProvider();
-        	if(provider instanceof TileManaProvider.Output)
+            if(provider instanceof TileManaProvider.Output)
         provider.recieveMana(manaAmount);
         }
         return CraftCheck.success();
@@ -56,7 +53,7 @@ public class RequirementMana extends ComponentRequirement<Mana, RequirementTypeM
     @Override
     public CraftCheck canStartCrafting(ProcessingComponent component, RecipeCraftingContext context, List restrictions) {
             if(getActionType() == IOType.INPUT) {
-            	TileManaProvider provider = (TileManaProvider) component.getComponent().getContainerProvider();
+                TileManaProvider provider = (TileManaProvider) component.getComponent().getContainerProvider();
                 return provider.getCurrentMana() >= this.manaAmount ? CraftCheck.success() : CraftCheck.failure("error.modularmagic.requirement.mana.less");
             }
             return CraftCheck.success();
