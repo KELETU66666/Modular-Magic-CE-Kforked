@@ -1,1 +1,11 @@
-{"variants": {"normal": {"model": "modularmagic:blockaspectproviderinput"}}}
+{
+  "forge_marker": 1,
+  "defaults":
+  {
+    "transform": "forge:default-block",
+    "model": "modularmagic:blockaspectproviderinput"
+  },
+  "variants": {
+    "normal": [{}], "inventory": [{}]
+  }
+}

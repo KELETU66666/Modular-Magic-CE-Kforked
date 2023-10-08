@@ -3,7 +3,6 @@ package fr.frinn.modularmagic.common.block;
 import fr.frinn.modularmagic.ModularMagic;
 import fr.frinn.modularmagic.common.tile.TileAspectProvider;
 import hellfirepvp.modularmachinery.common.block.BlockMachineComponent;
-import javax.annotation.Nullable;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -25,6 +24,8 @@ import thaumcraft.common.items.consumables.ItemPhial;
 import thaumcraft.common.lib.SoundsTC;
 import thaumcraft.common.tiles.essentia.TileJarFillable;
 
+import javax.annotation.Nullable;
+
 public class BlockAspectProviderInput extends BlockMachineComponent implements ILabelable {
 
     public BlockAspectProviderInput() {
@@ -43,7 +44,7 @@ public class BlockAspectProviderInput extends BlockMachineComponent implements I
 
     @Override
     public BlockRenderLayer getRenderLayer() {
-        return BlockRenderLayer.CUTOUT;
+        return BlockRenderLayer.TRANSLUCENT;
     }
 
     @Override

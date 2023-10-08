@@ -12,9 +12,10 @@ import hellfirepvp.modularmachinery.common.machine.MachineComponent;
 import hellfirepvp.modularmachinery.common.tiles.base.MachineComponentTile;
 import hellfirepvp.modularmachinery.common.tiles.base.TileInventory;
 import hellfirepvp.modularmachinery.common.util.IOInventory;
+import net.minecraft.item.ItemStack;
+
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import net.minecraft.item.ItemStack;
 
 public class TileLifeEssenceProvider extends TileInventory implements MachineComponentTile {
 

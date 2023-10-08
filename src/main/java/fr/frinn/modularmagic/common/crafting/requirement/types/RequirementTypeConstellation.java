@@ -8,6 +8,7 @@ import hellfirepvp.astralsorcery.common.constellation.IConstellation;
 import hellfirepvp.modularmachinery.common.crafting.helper.ComponentRequirement;
 import hellfirepvp.modularmachinery.common.crafting.requirement.type.RequirementType;
 import hellfirepvp.modularmachinery.common.machine.IOType;
+
 import javax.annotation.Nullable;
 
 public class RequirementTypeConstellation extends RequirementType<Constellation, RequirementConstellation> {

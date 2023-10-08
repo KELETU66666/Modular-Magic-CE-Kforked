@@ -4,9 +4,6 @@ import WayofTime.bloodmagic.BloodMagic;
 import WayofTime.bloodmagic.soul.EnumDemonWillType;
 import fr.frinn.modularmagic.common.integration.JeiPlugin;
 import fr.frinn.modularmagic.common.integration.jei.ingredient.DemonWill;
-import java.util.ArrayList;
-import java.util.List;
-import javax.annotation.Nullable;
 import mezz.jei.api.gui.IDrawableBuilder;
 import mezz.jei.api.ingredients.IIngredientRenderer;
 import net.minecraft.client.Minecraft;
@@ -15,6 +12,10 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.util.ResourceLocation;
+
+import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DemonWillRenderer implements IIngredientRenderer<DemonWill> {
 

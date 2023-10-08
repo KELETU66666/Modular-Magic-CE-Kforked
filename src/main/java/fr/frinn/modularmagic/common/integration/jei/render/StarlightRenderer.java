@@ -2,14 +2,15 @@ package fr.frinn.modularmagic.common.integration.jei.render;
 
 import fr.frinn.modularmagic.common.integration.jei.ingredient.Starlight;
 import hellfirepvp.astralsorcery.common.lib.ItemsAS;
-import java.util.ArrayList;
-import java.util.List;
-import javax.annotation.Nullable;
 import mezz.jei.api.ingredients.IIngredientRenderer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
+
+import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class StarlightRenderer implements IIngredientRenderer<Starlight> {
 

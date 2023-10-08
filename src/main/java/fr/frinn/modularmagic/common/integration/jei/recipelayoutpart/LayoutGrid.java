@@ -3,9 +3,10 @@ package fr.frinn.modularmagic.common.integration.jei.recipelayoutpart;
 import fr.frinn.modularmagic.common.integration.jei.ingredient.Grid;
 import fr.frinn.modularmagic.common.integration.jei.render.GridRenderer;
 import hellfirepvp.modularmachinery.common.integration.recipe.RecipeLayoutPart;
-import java.awt.*;
 import mezz.jei.api.ingredients.IIngredientRenderer;
 import net.minecraft.client.Minecraft;
+
+import java.awt.*;
 
 public class LayoutGrid extends RecipeLayoutPart<Grid> {
 

@@ -5,9 +5,10 @@ import fr.frinn.modularmagic.common.crafting.requirement.RequirementAspect;
 import fr.frinn.modularmagic.common.integration.jei.recipelayoutpart.LayoutAspect;
 import hellfirepvp.modularmachinery.common.crafting.helper.ComponentRequirement;
 import hellfirepvp.modularmachinery.common.integration.recipe.RecipeLayoutPart;
+import thaumcraft.api.aspects.AspectList;
+
 import java.awt.*;
 import java.util.List;
-import thaumcraft.api.aspects.AspectList;
 
 public class JEIComponentAspect extends ComponentRequirement.JEIComponent<AspectList> {
 

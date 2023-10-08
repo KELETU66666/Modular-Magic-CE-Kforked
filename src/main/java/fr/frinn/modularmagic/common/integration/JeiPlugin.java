@@ -45,5 +45,8 @@ public class JeiPlugin implements IModPlugin {
         if(ModularMagic.botaniaLoaded) {
             registry.register(Mana.class, Lists.newArrayList(), new ManaHelper<Mana>(), new ManaRenderer());
         }
+        if(ModularMagic.thaumicAugmentationLoaded) {
+            registry.register(Impetus.class, Lists.newArrayList(), new ImpetusHelper<>(), new ImpetusRender());
+        }
     }
 }

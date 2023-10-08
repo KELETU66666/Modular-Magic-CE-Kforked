@@ -7,6 +7,7 @@ import hellfirepvp.modularmachinery.common.machine.IOType;
 import hellfirepvp.modularmachinery.common.machine.MachineComponent;
 import hellfirepvp.modularmachinery.common.tiles.base.MachineComponentTile;
 import hellfirepvp.modularmachinery.common.tiles.base.TileColorableMachineComponent;
+
 import javax.annotation.Nullable;
 
 public class TileWillProvider extends TileColorableMachineComponent implements MachineComponentTile {

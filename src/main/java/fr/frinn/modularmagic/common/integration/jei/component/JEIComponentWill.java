@@ -6,6 +6,7 @@ import fr.frinn.modularmagic.common.integration.jei.ingredient.DemonWill;
 import fr.frinn.modularmagic.common.integration.jei.recipelayoutpart.LayoutWill;
 import hellfirepvp.modularmachinery.common.crafting.helper.ComponentRequirement;
 import hellfirepvp.modularmachinery.common.integration.recipe.RecipeLayoutPart;
+
 import java.awt.*;
 import java.util.List;
 

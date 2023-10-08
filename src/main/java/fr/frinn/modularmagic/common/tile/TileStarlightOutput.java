@@ -18,9 +18,6 @@ import hellfirepvp.modularmachinery.common.machine.IOType;
 import hellfirepvp.modularmachinery.common.machine.MachineComponent;
 import hellfirepvp.modularmachinery.common.tiles.base.ColorableMachineTile;
 import hellfirepvp.modularmachinery.common.tiles.base.MachineComponentTile;
-import java.util.Map;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.math.BlockPos;
@@ -28,6 +25,10 @@ import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.util.Map;
 
 public class TileStarlightOutput extends TileSourceBase implements MachineComponentTile, IStarlightSource, ILinkableTile, ColorableMachineTile {
 

@@ -2,8 +2,9 @@ package fr.frinn.modularmagic.common.item;
 
 import fr.frinn.modularmagic.ModularMagic;
 import hellfirepvp.modularmachinery.common.item.ItemDynamicColor;
-import java.util.ArrayList;
 import net.minecraft.item.Item;
+
+import java.util.ArrayList;
 
 public class ModularMagicItems {
 

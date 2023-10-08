@@ -16,8 +16,9 @@ import hellfirepvp.modularmachinery.common.lib.RegistriesMM;
 import hellfirepvp.modularmachinery.common.machine.IOType;
 import hellfirepvp.modularmachinery.common.machine.MachineComponent;
 import hellfirepvp.modularmachinery.common.util.ResultChance;
-import java.util.List;
+
 import javax.annotation.Nonnull;
+import java.util.List;
 
 public class RequirementWill extends ComponentRequirement<DemonWill, RequirementTypeWill> {
 

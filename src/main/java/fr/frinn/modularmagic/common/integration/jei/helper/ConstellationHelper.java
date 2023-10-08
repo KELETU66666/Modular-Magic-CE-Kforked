@@ -1,8 +1,9 @@
 package fr.frinn.modularmagic.common.integration.jei.helper;
 
 import fr.frinn.modularmagic.common.integration.jei.ingredient.Constellation;
-import javax.annotation.Nullable;
 import mezz.jei.api.ingredients.IIngredientHelper;
+
+import javax.annotation.Nullable;
 
 public class ConstellationHelper<T extends Constellation> implements IIngredientHelper<T> {
 

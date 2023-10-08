@@ -47,7 +47,11 @@ public class CommonProxy {
             GameRegistry.registerTileEntity(TileManaProvider.Input.class, new ResourceLocation(ModularMagic.MODID, "tilemanainput"));
             GameRegistry.registerTileEntity(TileManaProvider.Output.class, new ResourceLocation(ModularMagic.MODID, "tilemanaoutput"));
         }
-        NetworkRegistry.INSTANCE.registerGuiHandler(ModularMagic.INSTANCE, new GuiHandler());
+        if(ModularMagic.thaumicAugmentationLoaded) {
+            GameRegistry.registerTileEntity(TileImpetusComponent.Input.class, new ResourceLocation(ModularMagic.MODID, "impetusinput"));
+            GameRegistry.registerTileEntity(TileImpetusComponent.Output.class, new ResourceLocation(ModularMagic.MODID, "impetusoutput"));
+        }
+            NetworkRegistry.INSTANCE.registerGuiHandler(ModularMagic.INSTANCE, new GuiHandler());
     }
 
     public void init() {

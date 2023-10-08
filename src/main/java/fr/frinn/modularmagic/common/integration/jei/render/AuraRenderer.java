@@ -3,9 +3,6 @@ package fr.frinn.modularmagic.common.integration.jei.render;
 import de.ellpeck.naturesaura.api.aura.type.IAuraType;
 import de.ellpeck.naturesaura.items.ModItems;
 import fr.frinn.modularmagic.common.integration.jei.ingredient.Aura;
-import java.util.ArrayList;
-import java.util.List;
-import javax.annotation.Nullable;
 import mezz.jei.api.ingredients.IIngredientRenderer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
@@ -13,6 +10,10 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+
+import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AuraRenderer implements IIngredientRenderer<Aura> {
 

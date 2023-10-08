@@ -4,8 +4,9 @@ import WayofTime.bloodmagic.soul.EnumDemonWillType;
 import com.google.common.collect.Iterables;
 import fr.frinn.modularmagic.ModularMagic;
 import fr.frinn.modularmagic.common.integration.jei.ingredient.DemonWill;
-import javax.annotation.Nullable;
 import mezz.jei.api.ingredients.IIngredientHelper;
+
+import javax.annotation.Nullable;
 
 public class DemonWillHelper<T extends DemonWill> implements IIngredientHelper<T> {
 

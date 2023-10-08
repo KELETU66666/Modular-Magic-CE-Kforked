@@ -2,8 +2,9 @@ package fr.frinn.modularmagic.common.crafting.requirement.types;
 
 import fr.frinn.modularmagic.ModularMagic;
 import hellfirepvp.modularmachinery.common.crafting.requirement.type.RequirementType;
-import java.util.ArrayList;
 import net.minecraft.util.ResourceLocation;
+
+import java.util.ArrayList;
 
 public class ModularMagicRequirements {
 
@@ -18,6 +19,7 @@ public class ModularMagicRequirements {
     public static final ResourceLocation KEY_REQUIREMENT_STARLIGHT = new ResourceLocation(ModularMagic.MODID, "starlight");
     public static final ResourceLocation KEY_REQUIREMENT_WILL = new ResourceLocation(ModularMagic.MODID, "will");
     public static final ResourceLocation KEY_REQUIREMENT_MANA = new ResourceLocation(ModularMagic.MODID, "mana");
+    public static final ResourceLocation KEY_REQUIREMENT_IMPETUS = new ResourceLocation(ModularMagic.MODID, "impetus");
 
     public static void initRequirements() {
         if(ModularMagic.astralLoaded) {
@@ -37,6 +39,9 @@ public class ModularMagicRequirements {
         }
         if(ModularMagic.thaumcraftLoaded) {
             registerRequirement(new RequirementTypeAspect(), KEY_REQUIREMENT_ASPECT);
+        }
+        if(ModularMagic.thaumicAugmentationLoaded) {
+            registerRequirement(new RequirementTypeImpetus(), KEY_REQUIREMENT_IMPETUS);
         }
         if(ModularMagic.botaniaLoaded) {
             registerRequirement(new RequirementTypeMana(), KEY_REQUIREMENT_MANA);

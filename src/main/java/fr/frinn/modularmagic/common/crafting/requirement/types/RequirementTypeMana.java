@@ -7,6 +7,7 @@ import fr.frinn.modularmagic.common.utils.RequirementUtils;
 import hellfirepvp.modularmachinery.common.crafting.helper.ComponentRequirement;
 import hellfirepvp.modularmachinery.common.crafting.requirement.type.RequirementType;
 import hellfirepvp.modularmachinery.common.machine.IOType;
+
 import javax.annotation.Nullable;
 
 public class RequirementTypeMana extends RequirementType<Mana, RequirementMana> {

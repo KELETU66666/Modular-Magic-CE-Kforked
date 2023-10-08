@@ -5,7 +5,6 @@ import fr.frinn.modularmagic.common.event.RegistrationEvent;
 import fr.frinn.modularmagic.common.event.StarlightEventHandler;
 import fr.frinn.modularmagic.common.network.StarlightMessage;
 import fr.frinn.modularmagic.common.proxy.CommonProxy;
-import fr.frinn.modularmagic.modularmagic.Tags;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
@@ -18,12 +17,13 @@ import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.relauncher.Side;
 import thaumcraft.common.tiles.essentia.TileJarFillable;
 
-@Mod(modid = ModularMagic.MODID, name = Tags.MOD_NAME, version = Tags.VERSION)
+@Mod(modid = ModularMagic.MODID, name = "Modular Magic", version = "2.0.0")
 public class ModularMagic {
-    public static final String MODID = Tags.MOD_ID;
+    public static final String MODID = "modularmagic";
 
     public static boolean bloodmagicLoaded = false;
     public static boolean thaumcraftLoaded = false;
+    public static boolean thaumicAugmentationLoaded = false;
     public static boolean thaumicJEILoaded = false;
     public static boolean extraUtils2Loaded = false;
     public static boolean astralLoaded = false;
@@ -53,6 +53,7 @@ public class ModularMagic {
         astralLoaded = Loader.isModLoaded("astralsorcery");
         naturesauraLoaded = Loader.isModLoaded("naturesaura");
         botaniaLoaded = Loader.isModLoaded("botania");
+        thaumicAugmentationLoaded = Loader.isModLoaded("thaumicaugmentation");
 
         if(astralLoaded) {
             MinecraftForge.EVENT_BUS.register(StarlightEventHandler.class);

@@ -2,11 +2,12 @@ package fr.frinn.modularmagic.client.gui;
 
 import fr.frinn.modularmagic.common.container.ContainerLifeEssence;
 import fr.frinn.modularmagic.common.tile.TileLifeEssenceProvider;
-import javax.annotation.Nullable;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.IGuiHandler;
+
+import javax.annotation.Nullable;
 
 public class GuiHandler implements IGuiHandler {
 

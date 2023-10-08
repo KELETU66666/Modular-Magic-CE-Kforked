@@ -2,9 +2,11 @@ package fr.frinn.modularmagic.common.proxy;
 
 import fr.frinn.modularmagic.ModularMagic;
 import fr.frinn.modularmagic.client.Renderer.TileAspectProviderRenderer;
+import fr.frinn.modularmagic.client.Renderer.TileLifeEssentiaHatchRenderer;
 import fr.frinn.modularmagic.common.block.ModularMagicBlocks;
 import fr.frinn.modularmagic.common.item.ModularMagicItems;
 import fr.frinn.modularmagic.common.tile.TileAspectProvider;
+import fr.frinn.modularmagic.common.tile.TileLifeEssenceProvider;
 import hellfirepvp.modularmachinery.common.block.BlockDynamicColor;
 import hellfirepvp.modularmachinery.common.item.ItemDynamicColor;
 import net.minecraft.block.Block;
@@ -23,6 +25,10 @@ public class ClientProxy extends CommonProxy {
         if(ModularMagic.thaumcraftLoaded) {
             ClientRegistry.bindTileEntitySpecialRenderer(TileAspectProvider.Input.class, new TileAspectProviderRenderer());
             ClientRegistry.bindTileEntitySpecialRenderer(TileAspectProvider.Output.class, new TileAspectProviderRenderer());
+        }
+
+        if(ModularMagic.bloodmagicLoaded) {
+            ClientRegistry.bindTileEntitySpecialRenderer(TileLifeEssenceProvider.class, new TileLifeEssentiaHatchRenderer());
         }
     }
 

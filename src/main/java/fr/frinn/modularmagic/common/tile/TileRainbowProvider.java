@@ -7,10 +7,11 @@ import hellfirepvp.modularmachinery.common.machine.IOType;
 import hellfirepvp.modularmachinery.common.machine.MachineComponent;
 import hellfirepvp.modularmachinery.common.tiles.base.MachineComponentTile;
 import hellfirepvp.modularmachinery.common.tiles.base.TileColorableMachineComponent;
+import net.minecraft.nbt.NBTTagCompound;
+
+import javax.annotation.Nullable;
 import java.util.Collection;
 import java.util.Iterator;
-import javax.annotation.Nullable;
-import net.minecraft.nbt.NBTTagCompound;
 
 public class TileRainbowProvider extends TileColorableMachineComponent implements MachineComponentTile {
 

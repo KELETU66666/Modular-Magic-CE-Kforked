@@ -1,9 +1,10 @@
 package fr.frinn.modularmagic.common;
 
 import hellfirepvp.modularmachinery.common.lib.BlocksMM;
-import javax.annotation.Nonnull;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
+
+import javax.annotation.Nonnull;
 
 public class CreativeTabModularMagic extends CreativeTabs {
 

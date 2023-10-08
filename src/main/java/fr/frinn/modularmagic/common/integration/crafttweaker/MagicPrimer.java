@@ -7,6 +7,7 @@ import de.ellpeck.naturesaura.api.NaturesAuraAPI;
 import de.ellpeck.naturesaura.api.aura.type.IAuraType;
 import fr.frinn.modularmagic.common.crafting.requirement.*;
 import fr.frinn.modularmagic.common.integration.jei.ingredient.Aura;
+import fr.frinn.modularmagic.common.integration.jei.ingredient.Impetus;
 import hellfirepvp.astralsorcery.common.constellation.ConstellationRegistry;
 import hellfirepvp.astralsorcery.common.constellation.IConstellation;
 import hellfirepvp.modularmachinery.common.integration.crafttweaker.RecipePrimer;
@@ -224,6 +225,18 @@ public class MagicPrimer {
         else
             CraftTweakerAPI.logError("Invalid Mana amount : " + amount + " (need to be positive and not null)");
 
+        return primer;
+    }
+
+    @ZenMethod
+    public static RecipePrimer addImpetusInput(RecipePrimer primer, int amount) {
+        primer.appendComponent(new RequirementImpetus(IOType.INPUT, amount));
+        return primer;
+    }
+
+    @ZenMethod
+    public static RecipePrimer addImpetusOutput(RecipePrimer primer, int amount) {
+        primer.appendComponent(new RequirementImpetus(IOType.OUTPUT, amount));
         return primer;
     }
 }

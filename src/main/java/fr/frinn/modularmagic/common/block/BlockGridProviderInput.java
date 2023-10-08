@@ -3,7 +3,6 @@ package fr.frinn.modularmagic.common.block;
 import fr.frinn.modularmagic.ModularMagic;
 import fr.frinn.modularmagic.common.tile.TileGridProvider;
 import hellfirepvp.modularmachinery.common.block.BlockMachineComponent;
-import javax.annotation.Nullable;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -14,6 +13,8 @@ import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+
+import javax.annotation.Nullable;
 
 public class BlockGridProviderInput extends BlockMachineComponent {
 

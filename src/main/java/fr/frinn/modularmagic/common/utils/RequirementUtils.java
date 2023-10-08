@@ -7,9 +7,10 @@ import de.ellpeck.naturesaura.api.NaturesAuraAPI;
 import de.ellpeck.naturesaura.api.aura.type.IAuraType;
 import hellfirepvp.astralsorcery.common.constellation.ConstellationRegistry;
 import hellfirepvp.astralsorcery.common.constellation.IConstellation;
-import javax.annotation.Nullable;
 import net.minecraft.util.ResourceLocation;
 import thaumcraft.api.aspects.Aspect;
+
+import javax.annotation.Nullable;
 
 public class RequirementUtils {
 

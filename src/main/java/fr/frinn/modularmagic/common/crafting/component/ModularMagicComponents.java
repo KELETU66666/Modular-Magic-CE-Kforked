@@ -2,8 +2,9 @@ package fr.frinn.modularmagic.common.crafting.component;
 
 import fr.frinn.modularmagic.ModularMagic;
 import hellfirepvp.modularmachinery.common.crafting.ComponentType;
-import java.util.ArrayList;
 import net.minecraft.util.ResourceLocation;
+
+import java.util.ArrayList;
 
 public class ModularMagicComponents {
 
@@ -18,6 +19,7 @@ public class ModularMagicComponents {
     public static final ResourceLocation KEY_COMPONENT_STARLIGHT = new ResourceLocation(ModularMagic.MODID, "starlight");
     public static final ResourceLocation KEY_COMPONENT_WILL = new ResourceLocation(ModularMagic.MODID, "will");
     public static final ResourceLocation KEY_COMPONENT_MANA = new ResourceLocation(ModularMagic.MODID, "mana");
+    public static final ResourceLocation KEY_COMPONENT_IMPETUS = new ResourceLocation(ModularMagic.MODID, "impetus");
 
 
     public static void initComponents() {
@@ -38,6 +40,10 @@ public class ModularMagicComponents {
         }
         if(ModularMagic.thaumcraftLoaded) {
             registerComponent(new ComponentAspect(), KEY_COMPONENT_ASPECT);
+        }
+
+        if(ModularMagic.thaumicAugmentationLoaded) {
+            registerComponent(new ComponentImpetus(), KEY_COMPONENT_IMPETUS);
         }
 
         if(ModularMagic.botaniaLoaded) {

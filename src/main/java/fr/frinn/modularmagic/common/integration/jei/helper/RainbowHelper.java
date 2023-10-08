@@ -2,8 +2,9 @@ package fr.frinn.modularmagic.common.integration.jei.helper;
 
 import fr.frinn.modularmagic.ModularMagic;
 import fr.frinn.modularmagic.common.integration.jei.ingredient.Rainbow;
-import javax.annotation.Nullable;
 import mezz.jei.api.ingredients.IIngredientHelper;
+
+import javax.annotation.Nullable;
 
 public class RainbowHelper<T extends Rainbow> implements IIngredientHelper<T> {
 

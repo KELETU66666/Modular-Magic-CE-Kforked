@@ -4,9 +4,10 @@ import fr.frinn.modularmagic.ModularMagic;
 import fr.frinn.modularmagic.common.item.ModularMagicItems;
 import hellfirepvp.modularmachinery.common.block.BlockDynamicColor;
 import hellfirepvp.modularmachinery.common.item.ItemBlockMachineComponent;
-import java.util.ArrayList;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
+
+import java.util.ArrayList;
 
 public class ModularMagicBlocks {
 
@@ -28,6 +29,12 @@ public class ModularMagicBlocks {
 
         if (ModularMagic.thaumcraftLoaded) {
             ThaumcraftBlocks.registerBlocks();
+        }
+
+
+        if (ModularMagic.thaumicAugmentationLoaded) {
+            registerBlock("blockimpetusproviderinput", BlockImpetusProvider.Input.INSTANCE, BlockImpetusProvider.Input.ITEM_BLOCK);
+            registerBlock("blockimpetusprovideroutput", BlockImpetusProvider.Output.INSTANCE, BlockImpetusProvider.Output.ITEM_BLOCK);
         }
 
         if (ModularMagic.extraUtils2Loaded) {

@@ -3,11 +3,12 @@ package fr.frinn.modularmagic.common.container;
 import WayofTime.bloodmagic.orb.IBloodOrb;
 import fr.frinn.modularmagic.common.tile.TileLifeEssenceProvider;
 import hellfirepvp.modularmachinery.common.container.ContainerBase;
-import javax.annotation.Nonnull;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.items.SlotItemHandler;
+
+import javax.annotation.Nonnull;
 
 public class ContainerLifeEssence extends ContainerBase<TileLifeEssenceProvider> {
 

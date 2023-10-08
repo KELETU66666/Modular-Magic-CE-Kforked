@@ -1,11 +1,12 @@
 package fr.frinn.modularmagic.common.integration.jei.recipelayoutpart;
 
 import hellfirepvp.modularmachinery.common.integration.recipe.RecipeLayoutPart;
-import java.awt.*;
 import mezz.jei.api.ingredients.IIngredientRenderer;
 import mezz.jei.plugins.jei.JEIInternalPlugin;
 import net.minecraft.client.Minecraft;
 import thaumcraft.api.aspects.AspectList;
+
+import java.awt.*;
 
 public class LayoutAspect extends RecipeLayoutPart<AspectList> {
 

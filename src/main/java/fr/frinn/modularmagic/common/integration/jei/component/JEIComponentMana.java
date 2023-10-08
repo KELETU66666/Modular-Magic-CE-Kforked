@@ -6,7 +6,8 @@ import fr.frinn.modularmagic.common.integration.jei.ingredient.Mana;
 import fr.frinn.modularmagic.common.integration.jei.recipelayoutpart.LayoutMana;
 import hellfirepvp.modularmachinery.common.crafting.helper.ComponentRequirement;
 import hellfirepvp.modularmachinery.common.integration.recipe.RecipeLayoutPart;
-import java.awt.Point;
+
+import java.awt.*;
 import java.util.List;
 
 public class JEIComponentMana extends ComponentRequirement.JEIComponent<Mana> {

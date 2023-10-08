@@ -5,6 +5,7 @@ import fr.frinn.modularmagic.common.integration.jei.ingredient.Rainbow;
 import fr.frinn.modularmagic.common.integration.jei.recipelayoutpart.LayoutRainbow;
 import hellfirepvp.modularmachinery.common.crafting.helper.ComponentRequirement;
 import hellfirepvp.modularmachinery.common.integration.recipe.RecipeLayoutPart;
+
 import java.awt.*;
 import java.util.List;
 

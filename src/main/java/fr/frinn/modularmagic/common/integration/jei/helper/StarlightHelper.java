@@ -2,8 +2,9 @@ package fr.frinn.modularmagic.common.integration.jei.helper;
 
 import fr.frinn.modularmagic.ModularMagic;
 import fr.frinn.modularmagic.common.integration.jei.ingredient.Starlight;
-import javax.annotation.Nullable;
 import mezz.jei.api.ingredients.IIngredientHelper;
+
+import javax.annotation.Nullable;
 
 public class StarlightHelper<T extends Starlight> implements IIngredientHelper<Starlight> {
 

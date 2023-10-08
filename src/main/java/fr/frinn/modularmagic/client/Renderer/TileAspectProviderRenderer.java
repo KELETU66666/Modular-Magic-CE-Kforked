@@ -1,12 +1,23 @@
 package fr.frinn.modularmagic.client.Renderer;
 
 import fr.frinn.modularmagic.common.tile.TileAspectProvider;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.Tessellator;
+import net.minecraft.client.renderer.texture.TextureAtlasSprite;
+import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
+import org.lwjgl.opengl.GL11;
+import thaumcraft.api.blocks.BlocksTC;
+import thaumcraft.client.lib.RenderCubes;
 import thaumcraft.client.lib.UtilsFX;
 import thaumcraft.common.config.ModConfig;
 import thaumcraft.common.tiles.essentia.TileJarFillable;
+
+import java.awt.*;
 
 public class TileAspectProviderRenderer extends TileEntitySpecialRenderer<TileAspectProvider> {
 
@@ -23,10 +34,10 @@ public class TileAspectProviderRenderer extends TileEntitySpecialRenderer<TileAs
         if (tile instanceof TileJarFillable) {
             GlStateManager.disableLighting();
 
-            if (((TileJarFillable) tile).aspectFilter != null) {
+            if (tile.aspectFilter != null) {
                 GlStateManager.pushMatrix();
                 GlStateManager.blendFunc(770, 771);
-                switch (((TileJarFillable) tile).facing) {
+                switch (tile.facing) {
                     case 3:
                         GlStateManager.rotate(180.0F, 0.0F, 1.0F, 0.0F);
                         break;
@@ -37,7 +48,7 @@ public class TileAspectProviderRenderer extends TileEntitySpecialRenderer<TileAs
                         GlStateManager.rotate(90.0F, 0.0F, 1.0F, 0.0F);
                 }
 
-                float rot = (float) ((((TileJarFillable) tile).aspectFilter.getTag().hashCode() + tile.getPos().getX() + ((TileJarFillable) tile).facing) % 4 - 2);
+                float rot = (float) ((tile.aspectFilter.getTag().hashCode() + tile.getPos().getX() + tile.facing) % 4 - 2);
                 GlStateManager.pushMatrix();
                 GlStateManager.translate(0.0F, -0.5F, 0.501F);
                 if (ModConfig.CONFIG_GRAPHICS.crooked) {
@@ -54,13 +65,44 @@ public class TileAspectProviderRenderer extends TileEntitySpecialRenderer<TileAs
 
                 GlStateManager.scale(0.021D, 0.021D, 0.021D);
                 GlStateManager.rotate(180.0F, 0.0F, 1.0F, 0.0F);
-                UtilsFX.drawTag(-8, -8, ((TileJarFillable) tile).aspectFilter);
+                UtilsFX.drawTag(-8, -8, tile.aspectFilter);
                 GlStateManager.popMatrix();
                 GlStateManager.popMatrix();
+            }
+            if (tile.amount > 0) {
+                renderLiquid(tile, x, y, z, partialTicks);
             }
             GlStateManager.enableLighting();
         }
         GlStateManager.enableCull();
         GlStateManager.popMatrix();
+    }
+
+    public void renderLiquid(TileJarFillable te, double x, double y, double z, float f) {
+        GL11.glPushMatrix();
+        GL11.glRotatef(180.0f, 1.0f, 0.0f, 0.0f);
+        World world = te.getWorld();
+        RenderCubes renderBlocks = new RenderCubes();
+        GL11.glDisable(2896);
+        float level = te.amount / 250.0f * 0.35f;
+        Tessellator t = Tessellator.getInstance();
+        renderBlocks.setRenderBounds(0.25, 0.375, 0.25, 0.75, 0.375+ level, 0.75);
+        t.getBuffer().begin(7, DefaultVertexFormats.POSITION_TEX_LMAP_COLOR);
+        Color co = new Color(0);
+        if (te.aspect != null) {
+            co = new Color(te.aspect.getColor());
+        }
+        TextureAtlasSprite icon = Minecraft.getMinecraft().getTextureMapBlocks().getAtlasSprite("thaumcraft:blocks/animatedglow");
+        bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
+        renderBlocks.renderFaceYNeg(BlocksTC.jarNormal, -0.5, 0.0, -0.5, icon, co.getRed() / 255.0f, co.getGreen() / 255.0f, co.getBlue() / 255.0f, 200);
+        renderBlocks.renderFaceYPos(BlocksTC.jarNormal, -0.5, 0.0, -0.5, icon, co.getRed() / 255.0f, co.getGreen() / 255.0f, co.getBlue() / 255.0f, 200);
+        renderBlocks.renderFaceZNeg(BlocksTC.jarNormal, -0.5, 0.0, -0.5, icon, co.getRed() / 255.0f, co.getGreen() / 255.0f, co.getBlue() / 255.0f, 200);
+        renderBlocks.renderFaceZPos(BlocksTC.jarNormal, -0.5, 0.0, -0.5, icon, co.getRed() / 255.0f, co.getGreen() / 255.0f, co.getBlue() / 255.0f, 200);
+        renderBlocks.renderFaceXNeg(BlocksTC.jarNormal, -0.5, 0.0, -0.5, icon, co.getRed() / 255.0f, co.getGreen() / 255.0f, co.getBlue() / 255.0f, 200);
+        renderBlocks.renderFaceXPos(BlocksTC.jarNormal, -0.5, 0.0, -0.5, icon, co.getRed() / 255.0f, co.getGreen() / 255.0f, co.getBlue() / 255.0f, 200);
+        t.draw();
+        GL11.glEnable(2896);
+        GL11.glPopMatrix();
+        GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
     }
 }

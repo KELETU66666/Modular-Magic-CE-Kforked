@@ -11,8 +11,6 @@ import hellfirepvp.modularmachinery.common.machine.IOType;
 import hellfirepvp.modularmachinery.common.machine.MachineComponent;
 import hellfirepvp.modularmachinery.common.tiles.base.ColorableMachineTile;
 import hellfirepvp.modularmachinery.common.tiles.base.MachineComponentTile;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
@@ -20,6 +18,9 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 public abstract class TileGridProvider extends TilePower implements IWorldPowerMultiplier, MachineComponentTile, ITickable, ColorableMachineTile {
 
